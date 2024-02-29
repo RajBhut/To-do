@@ -1,36 +1,64 @@
 
 import React, { useState, useEffect } from 'react';
-var globleid = 0;
-function App() {
+import './App.css';
 
+function App() {
+//var globleid = localStorage.getItem('todos')[0].id;
 
     const [todos, setTodos] = useState([])
     const [task, setTask] = useState('')
+    
+   
+    useEffect(()=>{
+        const localTodos = localStorage.getItem('todos');
+        if(localTodos){
+            setTodos(JSON.parse(localTodos))
+        }
+    }, [])
+
+    useEffect(()=>{
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos])
 
     function createTodo(ev) {
         ev.preventDefault()
         setTask('')
-        setTodos(
-       
-            (oldtodos) => { 
-            
-            return [...oldtodos, {todo:task , id : globleid++}] })
-            
-    }
-    function deleteitem(itemID)    {
 
-        setTodos((oldtodos) => todos.filter( item => item.id != itemID))
+        setTodos((oldtodos) => { 
+            if(task === ""){
+                return [...oldtodos]
+            } else {
+                const newtodo = {todo:task , id : Date.now()}
+                return [...oldtodos,newtodo]
+            }
+        })  
     }
-    return <div>
-        <h1>Best To todo</h1>
+
+    function deleteitem(itemID)    {
+        setTodos((oldtodos) => oldtodos.filter( item => item.id != itemID))
+    }
+
+return <div>
+        <h1>What To Do?</h1>
         <form action="" onSubmit={createTodo}>
-        <input type="text" value={task} onChange={event => setTask(event.target.value)} />
-        <button type='submit'>enter</button>
+            <div className='lable'>
+        <input className='in' type="text" value={task} onChange={event => setTask(event.target.value)} />
+        <button className='sub' type='submit'>enter</button>
+        </div>
         <ul>
             {
-                todos.map((item, index) => { return <div key = {item.id}>
-                    <li>{item.todo}   ({item.id})</li> 
-                <button onClick={ ()=> deleteitem(item.id)}>delete</button></div>})
+               todos.map((item, index) => { return <div key={item.id}>
+                    <li ><div className='con'> { item.todo}  </div> <input className ="ch"type="checkbox"  onChange={(event)=>{
+                        if(event.target.checked){
+                            
+                            setTimeout(()=>deleteitem(item.id),500)
+                            // deleteitem(item.id);
+                        }
+                    }}/>   </li> 
+                
+                
+                </div>})
+               
             }
         </ul>
 </form>
