@@ -37,20 +37,23 @@ function App() {
 
     return (
         <div>
-            <center><h1>What To Do?</h1><Link to="/">Home</Link></center>
-            <form onSubmit={createTodo}>
+            <center><h1>What To Do?</h1><button id='home'>
+            <Link style={{textDecoration : 'none' ,fontSize : 25, color: 'white'}} to="/">Home</Link></button>
+            </center>
+            <form onSubmit={createTodo}><div className="ap">
                 <div className='label'>
                     <input className='input' type="text" value={task} onChange={event => setTask(event.target.value)} />
                     <button className='submit' type='submit'>Enter</button>
                 </div>
-                <ul>
+                
+                <ul className='user'>
                     {todos.map((item) => (
-                        <li key={item.id}>
+                        <li id='todo' key={item.id}>
                             <div className='con'>{item.todo}</div>
-                            <input className="checkbox" type="checkbox" onChange={() => deleteItem(item.id)} />
+                              <input className="checkbox" type="checkbox" onChange={() => deleteItem(item.id)} />
                         </li>
                     ))}
-                </ul>
+                </ul></div>
             </form>
         </div>
     );

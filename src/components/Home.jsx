@@ -31,20 +31,22 @@ function Home() {
     }, [users]);
 
     return (
-        <div>
-            <div className='Header'><h1>I am in Home</h1>
+        <div className='bd'>
+            <div className='Header'><h1> Home</h1>
             <form onSubmit={addUser}>
-            <input type="text" value={input} onChange={event => setInput(event.target.value)} /><button type='submit'>Add user</button></form></div>
-            <ul>
+            <input type="text" value={input} onChange={event => setInput(event.target.value)} /><button id='sub' type='submit'>Add user</button></form></div>
+      <div className="data">      
+            <ul >
                 {users.map(user => (
                     <div className='container' key={user.id}>
-                        <li>
-                            <Link to={`/user/${user.id}`}>{user.name}</Link>
+                        <li className='dt'>
+                            <Link style={{textDecoration : 'none' ,fontSize : 30, color: 'black'}} to={`/user/${user.id}`}>{user.name}</Link>
                            
-                        </li> <button onClick={() => deleteUser(user.id)}>Delete</button>
+                        </li> <button id='bt' onClick={() => deleteUser(user.id)}>Delete</button>
                     </div>
                 ))}
             </ul>
+            </div>
         </div>
     );
 }
