@@ -2,53 +2,49 @@
 
 
 body {
-  background-color: #f5f5f5; 
-  color: #333; 
+
+background-color: #f5f5f5;
+
+color: #333;
+
 }
 
 .con {
+  background-color: #a0d6e8;
+  color: #fff;
   display: flex;
   align-items: center;
-  width: 90%; 
+  width: 90%;
+  word-wrap: break-word;
   overflow-wrap: break-word;
   margin: 10px 0px;
-  height: 30px;
+  height: fit-content;
   padding: 5px 10px;
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out;
 }
 
 .con:hover {
-  transform: translateZ(5px) scale(1.02); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-}
-body {
-  background-color: #f5f5f5; 
-  color: #333; 
+  transform: translateZ(5px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.con, .sub {
-  background-color: #a0d6e8; 
-  color: #fff;
+.input {
+  width: 70%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
-
-
-
-
-li {
-  display: flex;
-  list-style: disc;
-  margin-bottom: 5px;
+.input:focus {
+  outline: none;
+  border: 1px solid #a0d6e8;
 }
 
-li:hover {
-  background-color: #f0f0f0;
-}
-
-
-.sub {
+.submit {
   display: inline-block;
   outline: none;
   cursor: pointer;
@@ -68,44 +64,33 @@ li:hover {
   background-color: #ddd;
 }
 
-.sub:hover {
+.submit:hover {
   color: #fff;
   background-color: #333;
 }
 
-
-.ch {
+.checkbox {
   background-color: #ddd;
   border-color: #ccc;
   transform: scale(2);
-
   margin-left: 2rem;
 }
 
-.ch:checked {
+.checkbox:checked {
   background-color: #333;
   border-color: #222;
-  transition: 2s;
-  transform: scale(1.2); 
-  opacity: 0.2  ;
-  transform:translatey(-40px)
+  transition: 1s;
+  transform: scale(1);
+  opacity: 0.1;
 }
 
-
-.in {
-  width: 70%; 
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px; 
-  box-sizing: border-box; 
+li {
+  display: flex;
+  list-style: disc;
+  margin-bottom: 5px;
+  height: fit-content;
 }
 
-.in:focus {
-  outline: none; 
-  border: 1px solid #a0d6e8;
-}
-.ch :hover + .con
-{
- background-color: #222;
+li:hover {
+  background-color: #f0f0f0;
 }

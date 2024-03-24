@@ -1,69 +1,59 @@
-
 import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import './App.css';
 
 function App() {
-//var globleid = localStorage.getItem('todos')[0].id;
+    const { userId } = useParams();
+    const [todos, setTodos] = useState([]);
+    const [task, setTask] = useState('');
 
-    const [todos, setTodos] = useState([])
-    const [task, setTask] = useState('')
-    
-   
-    useEffect(()=>{
-        const localTodos = localStorage.getItem('todos');
-        if(localTodos){
-            setTodos(JSON.parse(localTodos))
+    useEffect(() => {
+        const localTodos = localStorage.getItem(`todos_${userId}`);
+        if (localTodos) {
+            setTodos(JSON.parse(localTodos));
         }
-    }, [])
+    }, [userId]);
 
-    useEffect(()=>{
-        localStorage.setItem('todos', JSON.stringify(todos));
-    }, [todos])
+    useEffect(() => {
+        localStorage.setItem(`todos_${userId}`, JSON.stringify(todos));
+    }, [todos, userId]);
 
     function createTodo(ev) {
-        ev.preventDefault()
-        setTask('')
-
-        setTodos((oldtodos) => { 
-            if(task === ""){
-                return [...oldtodos]
-            } else {
-                const newtodo = {todo:task , id : Date.now()}
-                return [...oldtodos,newtodo]
-            }
-        })  
+        ev.preventDefault();
+        if (task.trim() === "") return;
+        
+        const newTodo = { todo: task, id: Date.now() };
+        setTodos((oldTodos) => [...oldTodos, newTodo]);
+        setTask('');
     }
 
-    function deleteitem(itemID)    {
-        setTodos((oldtodos) => oldtodos.filter( item => item.id != itemID))
-    }
+    function deleteItem(itemId) {
+        setTimeout(()=>setTodos(todos.filter((item) => item.id !== itemId)) , 500 )
+        
+      
+       
+       
+      }
 
-return <div>
-        <h1>What To Do?</h1>
-        <form action="" onSubmit={createTodo}>
-            <div className='lable'>
-        <input className='in' type="text" value={task} onChange={event => setTask(event.target.value)} />
-        <button className='sub' type='submit'>enter</button>
+    return (
+        <div>
+            <center><h1>What To Do?</h1><Link to="/">Home</Link></center>
+            <form onSubmit={createTodo}>
+                <div className='label'>
+                    <input className='input' type="text" value={task} onChange={event => setTask(event.target.value)} />
+                    <button className='submit' type='submit'>Enter</button>
+                </div>
+                <ul>
+                    {todos.map((item) => (
+                        <li key={item.id}>
+                            <div className='con'>{item.todo}</div>
+                            <input className="checkbox" type="checkbox" onChange={() => deleteItem(item.id)} />
+                        </li>
+                    ))}
+                </ul>
+            </form>
         </div>
-        <ul>
-            {
-               todos.map((item, index) => { return <div key={item.id}>
-                    <li ><div className='con'> { item.todo}  </div> <input className ="ch"type="checkbox"  onChange={(event)=>{
-                        if(event.target.checked){
-                            
-                            setTimeout(()=>deleteitem(item.id),500)
-                            // deleteitem(item.id);
-                        }
-                    }}/>   </li> 
-                
-                
-                </div>})
-               
-            }
-        </ul>
-</form>
-    </div>
-
+    );
 }
 
-export default App
+export default App;

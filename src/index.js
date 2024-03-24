@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
+import AppRouter from './routermanager';
+import Home from './components/Home';
 //import './index.css';
 
-// ----oldd synex ----ReactDOM.render(<h1>Love you sooooo much my little <strong>Princees  </strong> soo sorryy dikuuuu </h1> , document.getElementById('root'))
+// ----oldd synex ----ReactDOM.render(<h1> </h1> , document.getElementById('root'))
 
 const container = ReactDOM.createRoot(document.getElementById('root'))
-container.render(<><App /></>)
+container.render(<><AppRouter /></>)
 //container.render(<Header/>)
 
 
