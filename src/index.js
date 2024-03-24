@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/App';
+
 import AppRouter from './routermanager';
-import Home from './components/Home';
+
 //import './index.css';
 
 // ----oldd synex ----ReactDOM.render(<h1> </h1> , document.getElementById('root'))
