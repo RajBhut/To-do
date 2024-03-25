@@ -1,13 +1,16 @@
 const CACHE_NAME = "static_cache"
-const STATIC_ASSATE = 
-[
-    'index.html',
-    '/static/js/bundle.js',
-    'manifest.json',
-'/favicon.ico',
-'/logo192.png',
-'http://towhattodo.netlify.app/'
-]
+const STATIC_ASSETS = [
+   // 'index.html',
+    'https://towhattodo.netlify.app/static/js/main.e57458b6.js',
+  //  '/static/js/bundle.js',
+    'https://towhattodo.netlify.app/manifest.json',
+   
+'https://towhattodo.netlify.app/favicon.ico',
+    'https://towhattodo.netlify.app/logo192.png',
+    'https://towhattodo.netlify.app/sw.js',
+    'https://towhattodo.netlify.app/static/css/main.6dd954a2.css',
+    'https://towhattodo.netlify.app/'
+];
 async function prefatch()
 {
     const cache = await caches.open(CACHE_NAME)
@@ -38,6 +41,6 @@ return cache.match(event.request)
 }
 self.addEventListener('fetch',event =>
 {
-    console.log("sw installed");
+    console.log("sw fatched");
     event.respondWith(fetchasset(event))
 })
