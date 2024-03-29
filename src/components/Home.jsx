@@ -27,14 +27,15 @@ function Home() {
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('users', JSON.stringify(users));
-    }, [users]);
+              localStorage.setItem('users', JSON.stringify(users));
 
-    return (
+            }, [users]);
+
+   return(
         <div className='bd'>
             <div className='Header'><h1> Home</h1>
-            <form onSubmit={addUser}>
-            <input type="text" value={input} onChange={event => setInput(event.target.value)} /><button id='sub' type='submit'>Add user</button></form></div>
+            <form id='homeform' onSubmit={addUser}>
+            <input type="text" value={input} onChange={event => setInput(event.target.value)} id='homeinput' /><button id='sub' type='submit'>Add user</button></form></div>
       <div className="data">      
             <ul >
                 {users.map(user => (
@@ -49,6 +50,7 @@ function Home() {
             </div>
         </div>
     );
+  
 }
 
 export default Home;

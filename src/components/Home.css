@@ -1,4 +1,5 @@
 
+
 .container
 {
     display: flex;
@@ -10,9 +11,17 @@
  box-shadow: -10px 0 10px rgba(0,0,0,0.1);
  backdrop-filter: blur(10px);
     margin: 10px;
+padding: 3px;
 
     border-radius: 10px;
     
+}
+.container:hover
+{
+    
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.05);
 }
 
 
@@ -26,12 +35,14 @@
     text-decoration: none;
     padding: 5px;
 }
-form{
+#forminput{
     height: 50px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
-form input
+ #homeinput
 {
     height: 30px;
     border-radius: 10px;
@@ -44,24 +55,30 @@ form input
     margin-bottom: 5px;
     min-width: 300px;
 }
-form button
+
+#homeinput :hover
+{
+    
+    background-color: rgba(142, 214, 187, 0.288);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+}
+button
 {
     background-color: rgba(142, 214, 187, 0.288);
     box-shadow: -10px 0 10px rgba(0,0,0,0.1);
     backdrop-filter: blur(10px);
     border-radius: 8px;
     font-size: medium;
-    margin-left: 5px ;
+    margin-left: 10px ;
     border: none;
     outline: none;
-    margin-top: 5px ;
-    margin-bottom: 5px;
+  height: 75%;
 }
 
 .bd
 {
     
-    height: 100vh;
+    min-height:100vh ;
     background-color: #E9f1fa;
     
   
@@ -79,6 +96,9 @@ form button
 {
     display: flex;
     flex-direction: row;
+    height: fit-content;
+    flex-wrap: wrap;
+    word-break: break-all;
 }
 #home
 {
@@ -86,4 +106,11 @@ form button
     outline: none;
     width: 100px;
     height: 50px;
+}
+.data
+{
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    word-break: break-all;
 }

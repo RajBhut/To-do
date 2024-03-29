@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './App.css';
@@ -50,7 +51,7 @@ function App() {
                     {todos.map((item) => (
                         <li id='todo' key={item.id}>
                             <div className='con'>{item.todo}</div>
-                              <input className="checkbox" type="checkbox" onChange={() => deleteItem(item.id)} />
+                             <div className="checkboxcontainer"> <input className="checkbox" type="checkbox" onChange={() => deleteItem(item.id)} /></div>
                         </li>
                     ))}
                 </ul></div>

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import AppRouter from './routermanager';
 
-//import './index.css';
+import './index.css';
 
 // ----oldd synex ----ReactDOM.render(<h1> </h1> , document.getElementById('root'))
 
