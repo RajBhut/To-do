@@ -35,7 +35,7 @@ function Home() {
         <div className='bd'>
             <div className='Header'><h1> Home</h1>
             <form id='homeform' onSubmit={addUser}>
-            <input type="text" value={input} onChange={event => setInput(event.target.value)} id='homeinput' /><button id='sub' type='submit'>Add user</button></form></div>
+            <input type="text" value={input} onChange={event => setInput(event.target.value)} id='homeinput' placeholder='Add User' /><button id='sub' type='submit'>Add user</button></form></div>
       <div className="data">      
             <ul >
                 {users.map(user => (
