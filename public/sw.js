@@ -31,12 +31,12 @@ async function prefatch() {
 }
 
 self.addEventListener('install', event => {
-  console.log("sw installed");
+ 
   event.waitUntil(prefatch());
 });
 
 self.addEventListener('activate', event => {
-  console.log("sw activate");
+ 
 });
 
 async function fetchasset(event) {
@@ -50,6 +50,6 @@ async function fetchasset(event) {
 }
 
 self.addEventListener('fetch', event => {
-  console.log("sw fatched");
+
   event.respondWith(fetchasset(event));
 });
