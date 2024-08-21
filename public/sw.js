@@ -20,8 +20,8 @@ const STATIC_ASSETS = [
 async function prefatch() {
   const cache = await caches.open(CACHE_NAME);
   return cache.addAll(STATIC_ASSETS); 
-
-self.addEventListener('install', event => {
+}
+   self.addEventListener('install', event => {
  
   event.waitUntil(prefatch());
 });
