@@ -9,7 +9,7 @@ const STATIC_ASSETS = [
  
   'https://todo.rajb.codes/static/js/main.ff1d9581.js',
   'https://todo.rajb.codes/logo192.png',
-  'https://todo.rajb.codes/',
+  'https://todo.rajb.codes/'
 
 
 
