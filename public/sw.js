@@ -14,21 +14,12 @@ const STATIC_ASSETS = [
 
 
   
-  // 'index.html', // Uncomment if needed
- // 'https://towhattodo.netlify.app/static/js/main.e57458b6.js',
-  // '/static/js/bundle.js', // Uncomment if needed
-  //'https://towhattodo.netlify.app/manifest.json',
-//  'https://towhattodo.netlify.app/favicon.ico',
- // 'https://towhattodo.netlify.app/logo192.png',
-  //'https://towhattodo.netlify.app/sw.js',
- // 'https://towhattodo.netlify.app/static/css/main.6dd954a2.css',
- // 'https://towhattodo.netlify.app/',
+
 ];
 
 async function prefatch() {
   const cache = await caches.open(CACHE_NAME);
-  return cache.addAll(STATIC_ASSETS); // Use the correct variable name
-}
+  return cache.addAll(STATIC_ASSETS); 
 
 self.addEventListener('install', event => {
  
