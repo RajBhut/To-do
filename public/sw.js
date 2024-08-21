@@ -2,15 +2,27 @@
 const CACHE_NAME = "static_cache";
 
 const STATIC_ASSETS = [
+'https://todo.rajb.codes/static/css/main.4beff0df.css',
+  'https://todo.rajb.codes/sw.js',
+  'https://todo.rajb.codes/manifest.json',
+'https://todo.rajb.codes/favicon.ico',
+ 
+  'https://todo.rajb.codes/static/js/main.ff1d9581.js',
+  'https://todo.rajb.codes/logo192.png',
+  'https://todo.rajb.codes/',
+
+
+
+  
   // 'index.html', // Uncomment if needed
-  'https://towhattodo.netlify.app/static/js/main.e57458b6.js',
+ // 'https://towhattodo.netlify.app/static/js/main.e57458b6.js',
   // '/static/js/bundle.js', // Uncomment if needed
-  'https://towhattodo.netlify.app/manifest.json',
-  'https://towhattodo.netlify.app/favicon.ico',
-  'https://towhattodo.netlify.app/logo192.png',
-  'https://towhattodo.netlify.app/sw.js',
-  'https://towhattodo.netlify.app/static/css/main.6dd954a2.css',
-  'https://towhattodo.netlify.app/',
+  //'https://towhattodo.netlify.app/manifest.json',
+//  'https://towhattodo.netlify.app/favicon.ico',
+ // 'https://towhattodo.netlify.app/logo192.png',
+  //'https://towhattodo.netlify.app/sw.js',
+ // 'https://towhattodo.netlify.app/static/css/main.6dd954a2.css',
+ // 'https://towhattodo.netlify.app/',
 ];
 
 async function prefatch() {
