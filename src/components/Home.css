@@ -1,150 +1,123 @@
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 50px;
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 10px;
 
-h1
-{
- text-align: center;
- margin-top: 20px;
- font-size: 50px;
-color: #ffffff;
-border-bottom: 2px solid #ffffff;
-padding-bottom: 10px;
-
-text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
-h1:hover
-{
-    color: darkcyan;
-    transition: transform 0.3s ease-in-out;
-   
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+h1:hover {
+  color: darkcyan;
+  transition: transform 0.3s ease-in-out;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-.container
-{
-    display: flex;
-    flex-direction:column;
- min-width:  fit-content;
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
   max-width: 200px;
-    height: 100px;
- background-color: rgba(255, 255, 255, 0.288);
- box-shadow: -10px 0 10px rgba(0,0,0,0.1);
- backdrop-filter: blur(10px);
-    margin: 10px;
-padding: 3px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.288);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  margin: 10px;
+  padding: 3px;
 
-    border-radius: 10px;
-    
+  border-radius: 10px;
 }
-.container:hover
-{
-    
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    transform: scale(1.05);
+.container:hover {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.05);
 }
 
-.dt
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 60px;
-    min-width: fit-content;
-    text-decoration: none;
-    padding: 5px;
+.dt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  min-width: fit-content;
+  text-decoration: none;
+  padding: 5px;
 }
-#forminput{
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+#forminput {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#homeinput
-{
-    
-   
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: 300px;
-    height: 30px;
-    margin-left: 10px;
-    font-size: x-large;
-    padding: 10px;
-    outline: none;
+#homeinput {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 300px;
+  height: 30px;
+  margin-left: 10px;
+  font-size: x-large;
+  padding: 10px;
+  outline: none;
 }
 
-#homeinput:focus
-{
-    border: 2px solid darkcyan;
-    outline: none;
+#homeinput:focus {
+  border: 2px solid darkcyan;
+  outline: none;
 }
-button
-{
-    background-color: rgba(142, 214, 187, 0.488);
-    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 8px;
-    font-size: medium;
-    margin-left: 10px ;
-    border: none;
-    outline: none;
+button {
+  background-color: rgba(142, 214, 187, 0.488);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  font-size: medium;
+  margin-left: 10px;
+  border: none;
+  outline: none;
   height: 100%;
-
 }
 
-.bd
-{
-    
-    min-height:100vh ;
-    background-color: #E9f1fa;
- 
+.bd {
+  min-height: 100vh;
+  background-color: #e9f1fa;
 }
-#bt
-{
-    outline: none;
-    border: none;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.288);
-    margin-left: 0px;
-    backdrop-filter: blur(10px);
-    width: 100%;
+#bt {
+  outline: none;
+  border: none;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.288);
+  margin-left: 0px;
+  backdrop-filter: blur(10px);
+  width: 100%;
 }
-.data ul
-{
-    display: flex;
-    flex-direction: row;
-    height: fit-content;
-    flex-wrap: wrap;
-    word-break: break-all;
+.data ul {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  flex-wrap: wrap;
+  word-break: break-all;
 }
-#home
-{
-    border: none;
-    outline: none;
-    width: 100px;
-    height: 50px;
+#home {
+  border: none;
+  outline: none;
+  width: 100px;
+  height: 50px;
 }
-.data
-{
-    display: flex;
-    height: 100%;
-    flex-wrap: wrap;
-    word-break: break-all;
+.data {
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  word-break: break-all;
 }
-#sub
-{
-    height: 40px;
+#sub {
+  height: 40px;
 }
-#sub:hover
-{
-
-    color: white;
-    background-color: darkcyan;
-    transition: transform 0.3s ease-in-out;
-   height: 35px;
-    transform: scale(1.05);
-
+#sub:hover {
+  color: white;
+  background-color: darkcyan;
+  transition: transform 0.3s ease-in-out;
+  height: 35px;
+  transform: scale(1.05);
 }
-#sub:focus
-{
-    outline: none;
+#sub:focus {
+  outline: none;
 }
